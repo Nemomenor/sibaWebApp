@@ -21,11 +21,27 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
+<form id="taskForm">
 <input type="text" placeholder="Название задачи" id="task_name"/>
-Checkbox: <input type="checkbox" id="myCheck" onclick="myFunction()">
-
-<p id="text" style="display:none">Checkbox is CHECKED!</p>
-
+    <input type="checkbox" id="important" name="important">
+    <label for="important"> Важно</label><br>
+    <input type="datetime-local" id="dateTime" name="dateTime"><br>
+    <input type="checkbox" id="repeat" name="repeat">
+    <label for="repeat"> Повторять</label><br>
+    <select id="frequency" name="frequency" style="display:none;">
+        <option value="daily">Daily</option>
+        <option value="weekly">Weekly</option>
+        <option value="monthly">Monthly</option>
+    </select><br>
+    <input type="checkbox" id="target" name="target">
+    <label for="target"> Target</label><br>
+    <input type="text" id="value" name="value" style="display:none;">
+    <select id="valueType" name="valueType" style="display:none;">
+        <option value="type1">Type 1</option>
+        <option value="type2">Type 2</option>
+        <option value="type3">Type 3</option>
+    </select><br>
+</form>
 <script src="app.js"></script>
 </body>
 </html>
