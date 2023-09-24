@@ -7,25 +7,7 @@ tg.MainButton.setParams({
     text: 'Создать задачу',
     is_visible: true
 });
-$('#repeat').change(function() {
-    if(this.checked) {
-        $('#dateTime').prop('type', 'time');
-        $('#frequency').show();
-    } else {
-        $('#dateTime').prop('type', 'datetime-local');
-        $('#frequency').hide();
-    }
-});
 
-$('#target').change(function() {
-    if(this.checked) {
-        $('#value').show();
-        $('#valueType').show();
-    } else {
-        $('#value').hide();
-        $('#valueType').hide();
-    }
-});
 let task_name = document.getElementById("task_name").value;
 let myCheck = document.getElementById("myCheck").value;
 let data = {
