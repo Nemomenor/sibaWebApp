@@ -18,53 +18,54 @@
         Telegram.WebApp.onEvent('themeChanged', setThemeClass);
         setThemeClass();
     </script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- jQuery and JS bundle w/ Popper.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
 <div class="container">
     <form id="taskForm">
         <div class="form-group">
-            <label for="taskName">Task Name</label>
+            <label for="taskName">Наименование задачи</label>
             <input type="text" class="form-control" id="taskName" placeholder="Enter Task">
         </div>
         <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="important">
-            <label class="form-check-label" for="important">Important</label>
+            <label class="form-check-label" for="important">Важно</label>
+            <input class="form-check-input" type="checkbox" value="" id="repeat">
+            <label class="form-check-label" for="repeat">Повторять</label>
         </div>
         <div class="form-group">
-            <label for="dateTime">Date & Time</label>
+            <label for="dateTime">Дата/Время</label>
             <input type="datetime-local" class="form-control" id="dateTime">
         </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="repeat">
-            <label class="form-check-label" for="repeat">Repeat</label>
-        </div>
         <div class="form-group" style="display:none;" id="selectFrequency">
-            <label for="frequency">Frequency</label>
+            <label for="frequency">Периодичность</label>
             <select class="form-control" id="frequency">
-                <option>Daily</option>
-                <option>Weekly</option>
-                <option>Monthly</option>
+                <option>Ежедневно</option>
+                <option>Еженедельно</option>
+                <option>Ежемесячно</option>
             </select>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="target">
-            <label class="form-check-label" for="target">Target</label>
+            <label class="form-check-label" for="target">Цель</label>
         </div>
         <div class="form-group" style="display:none;" id="targetValueGroup">
-            <label for="targetValue">Target Value</label>
+            <label for="targetValue">Количество</label>
             <input type="text" class="form-control" id="targetValue" placeholder="Enter Target Value">
         </div>
         <div class="form-group" style="display:none;" id="valueTypeGroup">
-            <label for="valueType">Value Type</label>
+            <label for="valueType">Тип значения</label>
             <select class="form-control" id="valueType">
-                <option>Type 1</option>
-                <option>Type 2</option>
-                <option>Type 3</option>
+                <option>раз</option>
+                <option>миллилитров</option>
+                <option>страниц</option>
+                <option>километров</option>
+                <option>штук</option>
+                <option>минут</option>
+                <option>часов</option>
             </select>
         </div>
 
