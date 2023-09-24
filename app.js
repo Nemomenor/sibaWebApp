@@ -7,7 +7,7 @@ tg.MainButton.setParams({
     text: 'Создать задачу',
     is_visible: true
 });
-let task_name = document.getElementById("task_name").value();
+let task_name = document.getElementById("task_name").value;
 let data = {
     task_name: task_name
 }
