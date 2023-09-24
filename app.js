@@ -14,11 +14,3 @@ let data = {
     task_name: task_name,
     myCheck: myCheck
 }
-Telegram.WebApp.onEvent('mainButtonClicked', function(){
-    var taskData = $('#taskForm').serializeArray().reduce(function(obj, item) {
-        obj[item.name] = item.value;
-        return obj;
-    }, {});
-    tg.sendData(JSON.stringify(taskData));
-    tg.close();
-});
