@@ -103,8 +103,11 @@
             valueType: $('#valueType').val(),
         }
         tg.sendData(JSON.stringify(taskData));
+       tg.CloudStorage.setItem("1",taskData)
         tg.close();
+
     });
+
 
 </script>
 <script src="app.js"></script>
