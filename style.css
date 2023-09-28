@@ -1,66 +1,70 @@
-/* Create a unified style for all input fields */
-input[type="text"], input[type="date"], input[type="checkbox"]{
+body {
+    --bg-color: var(--tg-theme-bg-color, #fff);
+    font-family: sans-serif;
+    background-color: var(--bg-color);
+    color: var(--tg-theme-text-color, #222);
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    color-scheme: var(--tg-color-scheme);
+}
+body.gray {
+    background-color: var(--tg-theme-secondary-bg-color, #efefef);
+}
+/* Styling Labels */
+label {
+    color: var(--tg-theme-text-color, #222);
+}
+
+/* Styling Input Fields */
+#taskName, #targetValue {
     display: block;
     width: 90%;
-    height: 50px;
-    margin: 10px auto;
-    padding: 10px;
-    border: 1px solid #ccc;
+    margin: 0.5em auto;
+    padding: 0.5em;
     border-radius: 5px;
-}
-/* Style for the dropdown lists */
-select {
-    display: block;
-    width: 90%;
-    height: 60px;
-    margin: 10px auto;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: none;
+    height: 40px;
+    font-size: 16px;
 }
 
-/* Add unique IDs for each component if you want a specific style for certain fields*/
-
-/* #taskName input field */
-#taskName {
-    border: 1px solid #4285F4;
-    color: #212121;
+/* Styling Checkboxes */
+#important, #repeat, #target {
+    width: 70%;
+    height: 20px;
+    margin: 0.5em auto;
 }
 
-/* #important checkbox */
-#important {
-    width: auto;
-    float: left;
-}
-
-/* #dateTime date picker */
+/* Styling Date Picker */
 #dateTime {
-    border: 1px solid #34A853;
+    display: block;
+    width: 90%;
+    margin: 0.5em auto;
+    padding: 0.5em;
+    border-radius: 5px;
+    border: none;
+    height: 40px;
+    font-size: 16px;
 }
 
-/* #repeat checkbox */
-#repeat {
-    width: auto;
-    float: left;
+/* Styling Dropdown Lists */
+#frequency, #valueType {
+    display: block;
+    width: 90%;
+    margin: 0.5em auto;
+    padding: 0.5em;
+    border-radius: 5px;
+    border: none;
+    height: 50px;
+    font-size: 16px;
 }
 
-/* #frequency dropdown list */
-#frequency {
-    border: 1px solid #FBC02D;
-}
-
-/* #target checkbox */
-#target {
-    width: auto;
-    float: left;
-}
-
-/* #targetValue input field */
-#targetValue {
-    border: 1px solid #D32F2F;
-}
-
-/* #valueType dropdown list */
-#valueType {
-    border: 1px solid #7C4DFF;
+/* Adding Responsiveness so that it will look good on mobile view */
+@media screen and (max-width: 480px) {
+    #taskName, #targetValue, #dateTime, #frequency, #valueType {
+        width: 100%;
+    }
+    #important, #repeat, #target {
+        width: 100%;
+    }
 }
