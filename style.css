@@ -25,7 +25,7 @@ label {
     padding: 12px 20px;
     margin: 15px 0;
     border: 1px solid var(--tg-theme-link-color, #000);
-    background-color: var(--tg-theme-bg-color, #ffffff);
+    background-color: var(--tg-theme-secondary-bg-color, #ffffff);
     border-radius: 4px;
     color: var(--tg-theme-text-color, #222222);
     text-align: center;
@@ -47,7 +47,7 @@ label {
     padding: 12px 20px;
     margin: 15px 0;
     border: 1px solid var(--tg-theme-link-color, #000);
-    background-color: var(--tg-theme-bg-color, #ffffff);
+    background-color: var(--tg-theme-secondary-bg-color, #ffffff);
     color: var(--tg-theme-text-color, #222222);
     text-align: center;
     display: block;
@@ -76,7 +76,7 @@ label {
     padding: 12px 20px;
     margin: 15px 0;
     border: 1px solid var(--tg-theme-link-color, #000);
-    background-color: var(--tg-theme-bg-color, #ffffff);
+    background-color: var(--tg-theme-secondary-bg-color, #ffffff);
     border-radius: 4px;
     color: var(--tg-theme-text-color, #222222);
     text-align: center;
