@@ -2,7 +2,7 @@ body {
     --bg-color: var(--tg-theme-bg-color, #fff);
     font-family: Arial, sans-serif;
     background-color: var(--bg-color);
-    color: var(--tg-theme-text-color, #333);
+    color: var(--tg-theme-secondary-bg-color, #efefef);
     font-size: 14px;
     margin: 0;
     padding: 0;
@@ -61,10 +61,10 @@ label {
 }
 .taskCard{
     border-radius: 10px;
-    border: 1px solid #0088cc;
+    border: 1px solid  var(--tg-theme-bg-color, #222222);
     padding: 20px;
     margin: 20px 0;
-    background-color: var(--tg-theme-bg-color, #efefef);
+    background-color: var(--tg-theme-bg-color, #222222);
 }
 
 /* Styling Dropdown Lists */
