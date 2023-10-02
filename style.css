@@ -55,9 +55,11 @@ label {
     height: 40px;
     font-size: 16px;
 }
+
 .container{
     max-width: 600px;
     margin: auto;
+    background-color: var(--tg-theme-secondary-bg-color, #0088cc);
 }
 .taskCard{
     border-radius: 10px;
