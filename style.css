@@ -62,7 +62,7 @@ label {
     background-color: var(--tg-theme-bg-color, #0088cc);
 }
 .taskCard{
-    border-radius: 10px;
+    border-radius: 0px;
     border: 1px solid  var(--tg-theme-secondary-bg-color, #222222);
     padding: 20px;
     margin: 20px 0;
