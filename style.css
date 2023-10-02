@@ -64,11 +64,7 @@ label {
     border: 1px solid #0088cc;
     padding: 20px;
     margin: 20px 0;
-    background-color: var(--tg-theme-secondary-bg-color, #efefef);
-}
-
-.taskCard h2{
-    color: #0088cc;
+    background-color: var(--tg-theme-bg-color, #efefef);
 }
 
 /* Styling Dropdown Lists */
