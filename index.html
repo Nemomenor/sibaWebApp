@@ -94,10 +94,8 @@
     $("#frequency").change(function() {
         if ($(this).val() == "Ежемесячно") {
             $('#dateTime').prop('type', 'datetime-local');
-            $('#selectFrequency').show();
         } else {
             $('#dateTime').prop('type', 'time');
-            $('#selectFrequency').hide();
         }
     });
     $('#repeat').change(function() {
