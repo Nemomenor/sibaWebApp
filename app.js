@@ -18,9 +18,3 @@ tg.MainButton.setParams({
         tg.MainButton.show();
         errorMsg.style.display = 'none'; // hide the error message
     }
-let task_name = document.getElementById("task_name").value;
-let myCheck = document.getElementById("myCheck").value;
-let data = {
-    task_name: task_name,
-    myCheck: myCheck
-}
