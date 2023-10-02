@@ -42,9 +42,9 @@ label {
     width: 100%;
     padding: 12px 20px;
     margin: 15px 0;
-    border: 1px solid var(--tg-theme-link-color, #000);
+    border: 1px solid var(--tg-theme-link-color, #ffffff);
     background-color: var(--tg-theme-secondary-bg-color, #ffffff);
-    color: var(--tg-theme-text-color, #222222);
+    color: var(--tg-theme-text-color, #ffffff);
     text-align: center;
     display: block;
     border-radius: 5px;
