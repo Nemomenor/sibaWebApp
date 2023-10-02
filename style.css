@@ -59,14 +59,14 @@ label {
 .container{
     max-width: 600px;
     margin: auto;
-    background-color: var(--tg-theme-bg-color, #0088cc);
+    background-color: var(--tg-theme-secondary-bg-color, #0088cc);
 }
 .taskCard{
     border-radius: 0px;
-    border: 1px solid  var(--tg-theme-secondary-bg-color, #222222);
+    border: 1px solid  var(--tg-theme-bg-color, #222222);
     padding: 20px;
     margin: 20px 0;
-    background-color: var(--tg-theme-secondary-bg-color, #222222);
+    background-color: var(--tg-theme-bg-color, #222222);
 }
 
 /* Styling Dropdown Lists */
