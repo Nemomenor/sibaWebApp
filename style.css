@@ -1,8 +1,8 @@
 body {
     --bg-color: var(--tg-theme-bg-color, #fff);
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
     background-color: var(--bg-color);
-    color: var(--tg-theme-text-color, #222);
+    color: var(--tg-theme-text-color, #333);
     font-size: 14px;
     margin: 0;
     padding: 0;
@@ -54,6 +54,20 @@ label {
     border-radius: 5px;
     height: 40px;
     font-size: 16px;
+}
+.container{
+    max-width: 600px;
+    margin: auto;
+}
+.taskCard{
+    border-radius: 10px;
+    border: 1px solid #0088cc;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.taskCard h2{
+    color: #0088cc;
 }
 
 /* Styling Dropdown Lists */

@@ -1,57 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Time Management</title>
   <style>
-    #daysOfWeek {
-      display: flex;
-      gap: 10px;
+    body{
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+
+    .container{
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .taskCard{
+      border-radius: 10px;
+      border: 1px solid #0088cc;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .taskCard h2{
+      color: #0088cc;
+    }
+
+    .taskCard button{
+      padding: 10px 20px;
+      border: none;
+      background-color: #0088cc;
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 10px;
+      display: inline-block;
     }
   </style>
 </head>
+
 <body>
+<div class="container">
+  <h1>Time Management</h1>
 
-<form id="dataForm">
-  <label for="frequency">Frequency:</label>
-  <select id="frequency" name="frequency">
-    <option value="daily">Daily</option>
-    <option value="weekly">Weekly</option>
-    <option value="monthly">Monthly</option>
-  </select>
-
-  <div id="daysOfWeek" style="display:none">
-    <label><input type="checkbox" name="days" value="Mon">Mon</label>
-    <label><input type="checkbox" name="days" value="Tue">Tue</label>
-    <label><input type="checkbox" name="days" value="Wed">Wed</label>
-    <label><input type="checkbox" name="days" value="Thu">Thu</label>
-    <label><input type="checkbox" name="days" value="Fri">Fri</label>
-    <label><input type="checkbox" name="days" value="Sat">Sat</label>
-    <label><input type="checkbox" name="days" value="Sun">Sun</label>
+  <div class="taskCard">
+    <h2>Task 1</h2>
+    <p>Details about task 1</p>
+    <button>Start</button>
   </div>
 
-  <button type="button" onclick="submitForm()">Send</button>
-</form>
+  <div class="taskCard">
+    <h2>Task 2</h2>
+    <p>Details about task 2</p>
+    <button>Start</button>
+  </div>
 
-<script>
-  $("#frequency").change(function() {
-    if ($(this).val() == "weekly") {
-      $("#daysOfWeek").show();
-    } else {
-      $("#daysOfWeek").hide();
-      $('input[name="days"]').prop('checked', false);
-    }
-  });
+  <div class="taskCard">
+    <h2>Task 3</h2>
+    <p>Details about task 3</p>
+    <button>Start</button>
+  </div>
 
-  function submitForm() {
-    const data = {
-      frequency: $("#frequency").val(),
-      days: $("input[name='days']:checked").map(function() {
-        return this.value;
-      }).get()
-    };
-    alert(JSON.stringify(data, null, 2));
-  }
-</script>
-
+</div>
 </body>
 </html>
