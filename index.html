@@ -111,8 +111,6 @@
         }
     });
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
-        let task = form.querySelector('#taskName');
-        let errorMsg = form.querySelector('.error');
         const taskData = {
             taskName: $('#taskName').val(),
             important: $('#important').is(':checked'),
@@ -126,17 +124,9 @@
                 return this.value;
             }).get(),
         }
-        if (!task.value) {
 
-            errorMsg.style.display = 'block'; // show the error message
-        } else {
-            errorMsg.style.display = 'none'; // hide the error message
-            tg.sendData(JSON.stringify(taskData));
-            tg.CloudStorage.setItem("1",taskData)
-            tg.close();
-        }
-
-
+        tg.sendData(JSON.stringify(taskData));
+        tg.close();
 
     });
 
