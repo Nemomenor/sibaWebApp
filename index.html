@@ -27,7 +27,8 @@
 <div class="container">
     <form id="taskForm">
         <div class="taskCard">
-            <input type="text" class="form-control" id="taskName" placeholder="Введите название задачи">
+            <input type="text" id="taskName" placeholder="Введите название задачи">
+            <span class="error" style="color:red;display:none;">This field is required.</span><br>
             <input class="form-check-input" type="checkbox" value="" id="important">
             <label class="form-check-label" for="important">Важно</label>
         </div>
@@ -37,11 +38,11 @@
             <label class="form-check-label" for="repeat">Повторять</label>
             <div>
             <label for="dateTime">Дата/Время</label>
-            <input type="datetime-local" class="form-control" id="dateTime">
+            <input type="datetime-local" id="dateTime">
             </div>
             <div class="form-group" style="display:none;" id="selectFrequency">
                 <label for="frequency">Периодичность</label>
-                <select class="form-control" id="frequency">
+                <select id="frequency">
                     <option>Ежедневно</option>
                     <option>Еженедельно</option>
                     <option>Ежемесячно</option>
@@ -64,11 +65,11 @@
             <label class="form-check-label" for="target">Цель</label>
             <div class="form-group" style="display:none;" id="targetValueGroup">
                 <label for="targetValue">Количество</label>
-                <input pattern="[0-9]*" type="text" class="form-control" id="targetValue" placeholder="Введите количество">
+                <input pattern="[0-9]*" type="text" id="targetValue" placeholder="Введите количество">
             </div>
             <div class="form-group" style="display:none;" id="valueTypeGroup">
                 <label for="valueType">Тип значения</label>
-                <select class="form-control" id="valueType">
+                <select  id="valueType">
                     <option>раз</option>
                     <option>миллилитров</option>
                     <option>страниц</option>
@@ -110,6 +111,8 @@
         }
     });
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
+        let task = form.querySelector('#taskName');
+        let errorMsg = form.querySelector('.error');
         const taskData = {
             taskName: $('#taskName').val(),
             important: $('#important').is(':checked'),
@@ -123,9 +126,17 @@
                 return this.value;
             }).get(),
         }
-        tg.sendData(JSON.stringify(taskData));
-       tg.CloudStorage.setItem("1",taskData)
-        tg.close();
+        if (!task.value) {
+
+            errorMsg.style.display = 'block'; // show the error message
+        } else {
+            errorMsg.style.display = 'none'; // hide the error message
+            tg.sendData(JSON.stringify(taskData));
+            tg.CloudStorage.setItem("1",taskData)
+            tg.close();
+        }
+
+
 
     });
 
