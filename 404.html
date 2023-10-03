@@ -70,9 +70,9 @@
     var decodedHTML = window.atob(currentUrl);
     console.log(decodedHTML);
     const obj = JSON.parse(decodedHTML);
-    let elementById = document.getElementById("taskName");
-    elementById.innerHTML = obj.id;
-    console.log(elementById);
+    document.getElementById("taskName").value = obj.id;
+
+    console.log(obj.id);
 
 
 </script>
