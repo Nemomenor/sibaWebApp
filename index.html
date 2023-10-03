@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8">
+    <meta charset="windows-1251">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta name="format-detection" content="telephone=no"/>
@@ -26,53 +26,53 @@
 <div class="container">
     <form id="taskForm">
         <div class="taskCard">
-            <input type="text" id="taskName" placeholder="Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ Р·Р°РґР°С‡Рё">
+            <input type="text" id="taskName" placeholder="Введите название задачи">
             <span class="error" style="color:red;display:none;">This field is required.</span><br>
             <input class="form-check-input" type="checkbox" value="" id="important">
-            <label class="form-check-label" for="important">Р’Р°Р¶РЅРѕ</label>
+            <label class="form-check-label" for="important">Важно</label>
         </div>
         <div class="taskCard">
             <input class="form-check-input" type="checkbox" value="" id="repeat">
-            <label class="form-check-label" for="repeat">РџРѕРІС‚РѕСЂСЏС‚СЊ</label>
+            <label class="form-check-label" for="repeat">Повторять</label>
             <div>
-            <label for="dateTime">Р”Р°С‚Р°/Р’СЂРµРјСЏ</label>
+            <label for="dateTime">Дата/Время</label>
             <input type="datetime-local" id="dateTime">
             </div>
             <div class="form-group" style="display:none;" id="selectFrequency">
-                <label for="frequency">РџРµСЂРёРѕРґРёС‡РЅРѕСЃС‚СЊ</label>
+                <label for="frequency">Периодичность</label>
                 <select id="frequency">
-                    <option>Р•Р¶РµРґРЅРµРІРЅРѕ</option>
-                    <option>Р•Р¶РµРЅРµРґРµР»СЊРЅРѕ</option>
-                    <option>Р•Р¶РµРјРµСЃСЏС‡РЅРѕ</option>
+                    <option>Ежедневно</option>
+                    <option>Еженедельно</option>
+                    <option>Ежемесячно</option>
                 </select>
             </div>
             <div id="daysOfWeek" style="display:none">
-                <label><input type="checkbox" name="days" value="MONDAY">РїРЅ</label>
-                <label><input type="checkbox" name="days" value="TUESDAY">РІС‚</label>
-                <label><input type="checkbox" name="days" value="WEDNESDAY">СЃСЂ</label>
-                <label><input type="checkbox" name="days" value="THURSDAY">С‡С‚</label>
-                <label><input type="checkbox" name="days" value="FRIDAY">РїС‚</label>
-                <label><input type="checkbox" name="days" value="SATURDAY">СЃР±</label>
-                <label><input type="checkbox" name="days" value="SUNDAY">РІСЃ</label>
+                <label><input type="checkbox" name="days" value="MONDAY">пн</label>
+                <label><input type="checkbox" name="days" value="TUESDAY">вт</label>
+                <label><input type="checkbox" name="days" value="WEDNESDAY">ср</label>
+                <label><input type="checkbox" name="days" value="THURSDAY">чт</label>
+                <label><input type="checkbox" name="days" value="FRIDAY">пт</label>
+                <label><input type="checkbox" name="days" value="SATURDAY">сб</label>
+                <label><input type="checkbox" name="days" value="SUNDAY">вс</label>
             </div>
         </div>
         <div class="taskCard">
             <input class="form-check-input" type="checkbox" value="" id="target">
-            <label class="form-check-label" for="target">Р¦РµР»СЊ</label>
+            <label class="form-check-label" for="target">Цель</label>
             <div class="form-group" style="display:none;" id="targetValueGroup">
-                <label for="targetValue">РљРѕР»РёС‡РµСЃС‚РІРѕ</label>
-                <input pattern="[0-9]*" type="text" id="targetValue" placeholder="Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ">
+                <label for="targetValue">Количество</label>
+                <input pattern="[0-9]*" type="text" id="targetValue" placeholder="Введите количество">
             </div>
             <div class="form-group" style="display:none;" id="valueTypeGroup">
-                <label for="valueType">РўРёРї Р·РЅР°С‡РµРЅРёСЏ</label>
+                <label for="valueType">Тип значения</label>
                 <select  id="valueType">
-                    <option>СЂР°Р·</option>
-                    <option>РјРёР»Р»РёР»РёС‚СЂРѕРІ</option>
-                    <option>СЃС‚СЂР°РЅРёС†</option>
-                    <option>РєРёР»РѕРјРµС‚СЂРѕРІ</option>
-                    <option>С€С‚СѓРє</option>
-                    <option>РјРёРЅСѓС‚</option>
-                    <option>С‡Р°СЃРѕРІ</option>
+                    <option>раз</option>
+                    <option>миллилитров</option>
+                    <option>страниц</option>
+                    <option>километров</option>
+                    <option>штук</option>
+                    <option>минут</option>
+                    <option>часов</option>
                 </select>
             </div>
         </div>
@@ -80,7 +80,7 @@
 </div>
 <script>
     $("#frequency").change(function() {
-        if ($(this).val() == "Р•Р¶РµРЅРµРґРµР»СЊРЅРѕ") {
+        if ($(this).val() == "Еженедельно") {
             $("#daysOfWeek").show();
         } else {
             $("#daysOfWeek").hide();
@@ -88,7 +88,7 @@
         }
     });
     $("#frequency").change(function() {
-        if ($(this).val() == "Р•Р¶РµРјРµСЃСЏС‡РЅРѕ") {
+        if ($(this).val() == "Ежемесячно") {
             $('#dateTime').prop('type', 'datetime-local');
         } else {
             $('#dateTime').prop('type', 'time');
