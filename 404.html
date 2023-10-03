@@ -135,10 +135,10 @@
     });
 
     const currentUrl = window.location.href.substring(39);
-    console.log(currentUrl);
+   /* console.log(currentUrl);
     var decodedHTML = window.atob(currentUrl);
-    console.log(decodedHTML);
-    const obj = JSON.parse(decodedHTML);
+    console.log(decodedHTML);*/
+    const obj = JSON.parse(currentUrl);
     document.getElementById("id").value = obj.id;
     document.getElementById("taskName").value = obj.taskName;
 
