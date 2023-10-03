@@ -65,8 +65,10 @@
 </div>
 <script>
 
-    const currentUrl = window.location.href;
+    const currentUrl = window.location.href.substring(39);
     console.log(currentUrl);
+    var decodedHTML = window.atob(currentUrl);
+    console.log(decodedHTML);
 </script>
 </body>
 </html>
