@@ -141,7 +141,7 @@
     console.log(decodedHTML);
     const obj = JSON.parse(decodedHTML);
     document.getElementById("id").value = obj.id;
-    document.getElementById("taskName").value = obj.taskName;
+    document.getElementById("taskName").value = utf8.encode(obj.taskName);
 
     console.log(obj.id);
 
