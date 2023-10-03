@@ -9,6 +9,7 @@
     <meta name="MobileOptimized" content="176"/>
     <meta name="HandheldFriendly" content="True"/>
     <meta name="robots" content="noindex,nofollow"/>
+    <link rel="stylesheet" href="style.css">
     <title>SIBA</title>
     <script>
         function setThemeClass() {
@@ -135,10 +136,10 @@
     });
 
     const currentUrl = window.location.href.substring(39);
-   /* console.log(currentUrl);
+    console.log(currentUrl);
     var decodedHTML = window.atob(currentUrl);
-    console.log(decodedHTML);*/
-    const obj = JSON.parse(currentUrl);
+    console.log(decodedHTML);
+    const obj = JSON.parse(decodedHTML);
     document.getElementById("id").value = obj.id;
     document.getElementById("taskName").value = obj.taskName;
 
