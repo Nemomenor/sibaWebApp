@@ -27,7 +27,7 @@
     <form id="taskForm">
         <div class="taskCard">
             <input type="text" id="id" style="display:none;">
-            <input type="text" id="taskName" placeholder="Введите название задачи">
+            <input type="text" id="taskName" placeholder="Введите название задачи " charset=windows-1251>
             <span class="error" style="color:red;display:none;">This field is required.</span><br>
             <input class="form-check-input" type="checkbox" value="" id="important">
             <label class="form-check-label" for="important">Важно</label>
@@ -141,7 +141,7 @@
     console.log(decodedHTML);
     const obj = JSON.parse(decodedHTML);
     document.getElementById("id").value = obj.id;
-    document.getElementById("taskName").value = obj.taskName.encode();
+    document.getElementById("taskName").value = obj.taskName;
 
     console.log(obj.id);
 
