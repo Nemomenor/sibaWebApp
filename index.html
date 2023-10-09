@@ -27,11 +27,14 @@
     <form id="taskForm">
         <div class="taskCard">
             <input type="text" id="taskName" placeholder="Введите название задачи">
-            <span class="error" style="color:red;display:none;">This field is required.</span><br>
-            <input class="form-check-input" type="checkbox" value="" id="important">
-            <label class="form-check-label" for="important">Важно</label>
-            <input class="form-check-input" type="checkbox" value="" id="repeat">
-            <label class="form-check-label" for="repeat">Повторять</label>
+            <label class="inline-checkbox">
+                <input type="checkbox" id="important">
+                Важно
+            </label>
+            <label class="inline-checkbox">
+                <input type="checkbox" id="repeat">
+                Повторять
+            </label>
         </div>
         <div class="taskCard">
             <label for="dateTime">Дата/Время</label>

@@ -1,26 +1,20 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
+<head>
+  <style>
+    .inline-checkbox {
+      display: inline-block;
+    }
+  </style>
+</head>
 <body>
-<form action="/submissionURL" method="post">
-  <label for="myInput">My Input:</label><br>
-  <input type="text" id="myInput" name="myInput" required>
-  <span class="error" style="color:red;display:none;">This field is required.</span><br>
-  <input type="submit" value="Submit">
-</form>
-
-<script>let form = document.querySelector('form')
-form.addEventListener('submit', function(event) {
-  let input = form.querySelector('#myInput');
-  let errorMsg = form.querySelector('.error');
-  if (!input.value) {
-    event.preventDefault(); // stop form submission
-    errorMsg.style.display = 'block'; // show the error message
-  } else {
-    errorMsg.style.display = 'none'; // hide the error message
-  }
-});
-
-</script>
-
+<label class="inline-checkbox">
+  <input type="checkbox">
+  Toggle Checkbox 1
+</label>
+<label class="inline-checkbox">
+  <input type="checkbox">
+  Toggle Checkbox 2
+</label>
 </body>
 </html>
