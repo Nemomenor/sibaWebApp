@@ -13,7 +13,7 @@ label {
 }
 
 /* Styling Input Fields */
-#taskName, #targetValue {
+#taskName, #targetValue, .dateTime {
     display: block;
     box-sizing: border-box;
     font-size: 14px;
@@ -26,20 +26,7 @@ label {
     color: var(--tg-theme-text-color, #222222);
     text-align: center;
 }
-/* Styling Date Picker */
-.dateTime {
-    display: block;
-    box-sizing: border-box;
-    font-size: 14px;
-    width: 100%;
-    padding: 12px 20px;
-    margin: 15px 0;
-    border: 1px solid var(--tg-theme-link-color, #000);
-    background-color: var(--tg-theme-secondary-bg-color, #ffffff);
-    border-radius: 4px;
-    color: var(--tg-theme-text-color, #222222);
-    text-align: center;
-}
+
 #addTime{
     display: block;
     border-radius: 5px;
