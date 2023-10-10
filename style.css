@@ -26,6 +26,20 @@ label {
     color: var(--tg-theme-text-color, #222222);
     text-align: center;
 }
+/* Styling Date Picker */
+.dateTime {
+    display: block;
+    box-sizing: border-box;
+    font-size: 14px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 15px 0;
+    border: 1px solid var(--tg-theme-link-color, #000);
+    background-color: var(--tg-theme-secondary-bg-color, #ffffff);
+    border-radius: 4px;
+    color: var(--tg-theme-text-color, #222222);
+    text-align: center;
+}
 #addTime{
     display: block;
     border-radius: 5px;
@@ -94,7 +108,6 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-
     -ms-transform: translateX(44px);
     transform: translateX(44px);
 }
@@ -107,21 +120,7 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
-/* Styling Date Picker */
-.dateTime {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 12px 20px;
-    margin: 15px 0;
-    border: 1px solid var(--tg-theme-link-color, #ffffff);
-    background-color: var(--tg-theme-secondary-bg-color, #ffffff);
-    color: var(--tg-theme-text-color, #ffffff);
-    text-align: center;
-    display: block;
-    border-radius: 5px;
-    height: 40px;
-    font-size: 16px;
-}
+
 
 .container{
     max-width: 600px;
