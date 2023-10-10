@@ -15,6 +15,7 @@
         function setThemeClass() {
             document.documentElement.className = Telegram.WebApp.colorScheme;
         }
+
         Telegram.WebApp.onEvent('themeChanged', setThemeClass);
         setThemeClass();
     </script>
@@ -42,7 +43,9 @@
         </div>
         <div class="taskCard">
             <label id="timeLabel" for="dateTime">Дата/Время</label>
-            <input type="datetime-local" id="dateTime">
+            <div id="dateTimeContainer">
+                <input class="dateTime" type="datetime-local" id="dateTime">
+            </div>
             <button id="addTime" style="display:none;">Добавить время</button>
             <div class="form-group" style="display:none;" id="selectFrequency">
                 <label for="frequency">Периодичность</label>
@@ -70,7 +73,7 @@
             </div>
             <div class="form-group" style="display:none;" id="valueTypeGroup">
                 <label for="valueType">Тип значения</label>
-                <select  id="valueType">
+                <select id="valueType">
                     <option>раз</option>
                     <option>миллилитров</option>
                     <option>страниц</option>
@@ -85,20 +88,17 @@
 </div>
 <script>
     var counter = 1;
-    $('#addTime').click(function() {
+    $('#addTime').click(function () {
         counter++;
-        if(counter <= 10) {
+        if (counter <= 10) {
             $('#dateTimeContainer').append(`
-          <div class="dateTime" id="dateTime${counter}">
-            <input type="date" id="date${counter}">
-            <input type="time" id="time${counter}">
-          </div>
+            <input class="dateTime" type="datetime-local" id="dateTime${counter}">
         `);
         } else {
             alert('Limit reached. Only 10 date and time inputs are allowed.');
         }
     });
-    $("#frequency").change(function() {
+    $("#frequency").change(function () {
         if ($(this).val() == "Еженедельно") {
             $("#daysOfWeek").show();
         } else {
@@ -106,15 +106,15 @@
             $('input[name="days"]').prop('checked', false);
         }
     });
-    $("#frequency").change(function() {
+    $("#frequency").change(function () {
         if ($(this).val() == "Ежемесячно") {
             $('#dateTime').prop('type', 'datetime-local');
         } else {
             $('#dateTime').prop('type', 'time');
         }
     });
-    $('#repeat').change(function() {
-        if(this.checked) {
+    $('#repeat').change(function () {
+        if (this.checked) {
             $('#dateTime').prop('type', 'time');
             $('#selectFrequency').show();
             $('#addTime').show();
@@ -126,8 +126,8 @@
         }
     });
 
-    $('#target').change(function() {
-        if(this.checked) {
+    $('#target').change(function () {
+        if (this.checked) {
             $('#targetValueGroup').show();
             $('#valueTypeGroup').show();
             $('#targetValue').val("1");
@@ -144,7 +144,7 @@
         document.getElementById('dateTime').value = now.toISOString().slice(0, -1);
     });
 
-    Telegram.WebApp.onEvent('mainButtonClicked', function(){
+    Telegram.WebApp.onEvent('mainButtonClicked', function () {
         const taskData = {
             taskName: $('#taskName').val(),
             important: $('#important').is(':checked'),
@@ -154,7 +154,7 @@
             target: $('#target').is(':checked'),
             targetValue: $('#targetValue').val(),
             valueType: $('#valueType').val(),
-            days: $("input[name='days']:checked").map(function() {
+            days: $("input[name='days']:checked").map(function () {
                 return this.value;
             }).get(),
         }

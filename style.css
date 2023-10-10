@@ -108,7 +108,7 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 /* Styling Date Picker */
-#dateTime {
+.dateTime {
     box-sizing: border-box;
     width: 100%;
     padding: 12px 20px;
