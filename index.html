@@ -155,7 +155,9 @@
         const taskData = {
             taskName: $('#taskName').val(),
             important: $('#important').is(':checked'),
-            dateTime: $('#dateTime1').val(),
+            dateTime: $('.dateTime').each(function() {
+                dateTimeArray.push($(this).val());
+            }),
             repeat: $('#repeat').is(':checked'),
             frequency: $('#frequency').val(),
             target: $('#target').is(':checked'),
