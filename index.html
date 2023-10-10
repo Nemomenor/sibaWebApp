@@ -152,12 +152,14 @@
     });
 
     Telegram.WebApp.onEvent('mainButtonClicked', function () {
+        let dateTimeArray = [];
+        $('.dateTime').each(function() {
+            dateTimeArray.push($(this).val());
+        });
         const taskData = {
             taskName: $('#taskName').val(),
             important: $('#important').is(':checked'),
-            dateTime: $('.dateTime').each(function() {
-                dateTimeArray.push($(this).val());
-            }),
+            dateTime: dateTimeArray,
             repeat: $('#repeat').is(':checked'),
             frequency: $('#frequency').val(),
             target: $('#target').is(':checked'),
