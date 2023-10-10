@@ -27,11 +27,12 @@ label {
     text-align: center;
 }
 #addTime{
+    display: block;
     border-radius: 50px;
     background-color: var(--tg-theme-button-color, #2196F3);
     color: var(--tg-theme-bg-color, #222222);
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     font-size: 30px;
 }
 /* Styling Checkboxes */
