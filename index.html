@@ -160,7 +160,12 @@
         const taskData = {
             taskName: $('#taskName').val(),
             important: $('#important').is(':checked'),
-            dateTime: data,
+            dateTime: [function (){
+                for(let i=1; i<=count; i++) {
+                    const dateTimeValue = document.getElementById('dateTime'+i).value;
+                    data.push({id: 'dateTime'+i, dateTime: dateTimeValue});
+                }
+            }],
             repeat: $('#repeat').is(':checked'),
             frequency: $('#frequency').val(),
             target: $('#target').is(':checked'),
@@ -170,7 +175,6 @@
                 return this.value;
             }).get(),
         }
-
         tg.sendData(JSON.stringify(taskData));
         tg.close();
 
