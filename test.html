@@ -1,21 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-    .gapped-checkbox {
-      display: inline-block;
-      margin-right: 200px;
-    }
-  </style>
+  <title>Date and Time Selection</title>
 </head>
 <body>
-<label class="gapped-checkbox">
-  <input type="checkbox">
-  Toggle Checkbox 1
-</label>
-<label class="gapped-checkbox">
-  <input type="checkbox">
-  Toggle Checkbox 2
-</label>
+<h1>Date and Time Selection</h1>
+
+<form id="dateForm">
+  <div id="dateContainer"></div>
+  <button type="button" onclick="addDateTime()">Add Date and Time</button>
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+  let counter = 1;
+
+  function addDateTime() {
+    if (counter <= 10) {
+      const container = document.getElementById('dateContainer');
+
+      const datetimeInput = document.createElement('div');
+      datetimeInput.innerHTML = `
+          <label for="date${counter}">Date ${counter}: </label>
+          <input type="date" id="date${counter}" name="date${counter}">
+          <input type="time" id="time${counter}" name="time${counter}">
+          <br>
+        `;
+
+      container.appendChild(datetimeInput);
+      counter++;
+    }
+  }
+
+  document.getElementById('dateForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission for this example
+
+    // Get all the date and time values from the form
+    const formData = new FormData(this);
+    for (let i = 1; i <= 10; i++) {
+      const date = formData.get(`date${i}`);
+      const time = formData.get(`time${i}`);
+
+      if (date && time) {
+        console.log(`Date ${i}: ${date}`);
+        console.log(`Time ${i}: ${time}`);
+      }
+    }
+  });
+</script>
 </body>
 </html>

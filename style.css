@@ -26,7 +26,15 @@ label {
     color: var(--tg-theme-text-color, #222222);
     text-align: center;
 }
-
+#addTime{
+    border-radius: 50px;
+    background-color: var(--tg-theme-button-color, #000);
+    color: var(--tg-theme-button-text-color);
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    text-align: center;
+}
 /* Styling Checkboxes */
 #important, #repeat, #target {
     width: 40px;
