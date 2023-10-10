@@ -41,9 +41,9 @@
             </label>
         </div>
         <div class="taskCard">
-            <label for="dateTime">Дата/Время</label>
+            <label id="timeLabel" for="dateTime">Дата/Время</label>
             <input type="datetime-local" id="dateTime">
-            <button id="addTime">+</button>
+            <button id="addTime" style="display:none;">Добавить время</button>
             <div class="form-group" style="display:none;" id="selectFrequency">
                 <label for="frequency">Периодичность</label>
                 <select id="frequency">
@@ -84,6 +84,20 @@
     </form>
 </div>
 <script>
+    var counter = 1;
+    $('#addTime').click(function() {
+        counter++;
+        if(counter <= 10) {
+            $('#dateTimeContainer').append(`
+          <div class="dateTime" id="dateTime${counter}">
+            <input type="date" id="date${counter}">
+            <input type="time" id="time${counter}">
+          </div>
+        `);
+        } else {
+            alert('Limit reached. Only 10 date and time inputs are allowed.');
+        }
+    });
     $("#frequency").change(function() {
         if ($(this).val() == "Еженедельно") {
             $("#daysOfWeek").show();
@@ -103,7 +117,10 @@
         if(this.checked) {
             $('#dateTime').prop('type', 'time');
             $('#selectFrequency').show();
+            $('#addTime').show();
+            $("#timeLabel").text("Время");
         } else {
+            $("#timeLabel").text("Дата/Время");
             $('#dateTime').prop('type', 'datetime-local');
             $('#selectFrequency').hide();
         }

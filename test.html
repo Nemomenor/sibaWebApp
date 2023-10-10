@@ -1,53 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Date and Time Selection</title>
+  <title>Date and Time Choice</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-<h1>Date and Time Selection</h1>
-
-<form id="dateForm">
-  <div id="dateContainer"></div>
-  <button type="button" onclick="addDateTime()">Add Date and Time</button>
-  <br><br>
-  <input type="submit" value="Submit">
-</form>
+<div id="dateTimeContainer">
+  <div class="dateTime" id="dateTime1">
+    <input type="date" id="date1">
+    <input type="time" id="time1">
+  </div>
+</div>
+<button id="addButton">Add Another Date and Time</button>
 
 <script>
-  let counter = 1;
-
-  function addDateTime() {
-    if (counter <= 10) {
-      const container = document.getElementById('dateContainer');
-
-      const datetimeInput = document.createElement('div');
-      datetimeInput.innerHTML = `
-          <label for="date${counter}">Date ${counter}: </label>
-          <input type="date" id="date${counter}" name="date${counter}">
-          <input type="time" id="time${counter}" name="time${counter}">
-          <br>
-        `;
-
-      container.appendChild(datetimeInput);
-      counter++;
-    }
-  }
-
-  document.getElementById('dateForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission for this example
-
-    // Get all the date and time values from the form
-    const formData = new FormData(this);
-    for (let i = 1; i <= 10; i++) {
-      const date = formData.get(`date${i}`);
-      const time = formData.get(`time${i}`);
-
-      if (date && time) {
-        console.log(`Date ${i}: ${date}`);
-        console.log(`Time ${i}: ${time}`);
-      }
+  var counter = 1;
+  $('#addButton').click(function() {
+    counter++;
+    if(counter <= 10) {
+      $('#dateTimeContainer').append(`
+          <div class="dateTime" id="dateTime${counter}">
+            <input type="date" id="date${counter}">
+            <input type="time" id="time${counter}">
+          </div>
+        `);
+    } else {
+      alert('Limit reached. Only 10 date and time inputs are allowed.');
     }
   });
 </script>
+
 </body>
 </html>
