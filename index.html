@@ -150,22 +150,16 @@
         now.setSeconds(null)
         document.getElementById('dateTime').value = now.toISOString().slice(0, -1);
     });
-
+    let data = [];
+    for(let i=1; i<=count; i++) {
+        const dateTimeValue = document.getElementById('dateTime'+i).value;
+        data.push({id: 'dateTime'+i, dateTime: dateTimeValue});
+    }
     Telegram.WebApp.onEvent('mainButtonClicked', function () {
-        let data = [];
-        for(let i=1; i<=count; i++) {
-            const dateTimeValue = document.getElementById('dateTime'+i).value;
-            data.push({id: 'dateTime'+i, dateTime: dateTimeValue});
-        }
         const taskData = {
             taskName: $('#taskName').val(),
             important: $('#important').is(':checked'),
-            dateTime: [function (){
-                for(let i=1; i<=count; i++) {
-                    const dateTimeValue = document.getElementById('dateTime'+i).value;
-                    data.push({id: 'dateTime'+i, dateTime: dateTimeValue});
-                }
-            }],
+            dateTime: data,
             repeat: $('#repeat').is(':checked'),
             frequency: $('#frequency').val(),
             target: $('#target').is(':checked'),
