@@ -95,7 +95,7 @@
             <input class="dateTime" type="time" id="dateTime${counter}">
         `);
         } else {
-            alert('Limit reached. Only 10 date and time inputs are allowed.');
+            alert('Количество напоминаний не может быть более 10 в рамках одной задачи ');
         }
     });
     $("#frequency").change(function () {
@@ -150,11 +150,6 @@
         now.setSeconds(null)
         document.getElementById('dateTime').value = now.toISOString().slice(0, -1);
     });
-    let data = [];
-    for(let i=1; i<=count; i++) {
-        const dateTimeValue = document.getElementById('dateTime'+i).value;
-        data.push({id: 'dateTime'+i, dateTime: dateTimeValue});
-    }
     Telegram.WebApp.onEvent('mainButtonClicked', function () {
         const taskData = {
             taskName: $('#taskName').val(),
