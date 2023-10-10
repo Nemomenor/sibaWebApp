@@ -115,14 +115,21 @@
     });
     $('#repeat').change(function () {
         if (this.checked) {
-            $('#dateTime').prop('type', 'time');
+            $('#dateTime1').prop('type', 'time');
             $('#selectFrequency').show();
             $('#addTime').show();
             $("#timeLabel").text("Время");
         } else {
             $("#timeLabel").text("Дата/Время");
-            $('#dateTime').prop('type', 'datetime-local');
+            $('#dateTime1').prop('type', 'datetime-local');
+            $('#addTime').hide();
             $('#selectFrequency').hide();
+            for (i = 2; i <= 10; i++) {
+                const h1 = document.querySelector('#dateTime'+i)
+                const parent = h1.parentNode
+                parent.removeChild(h1)
+            }
+
         }
     });
 
