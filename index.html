@@ -56,13 +56,13 @@
                 </select>
             </div>
             <div id="daysOfWeek" style="display:none">
-                <label><input type="checkbox" name="days" value="MO">пн</label>
-                <label><input type="checkbox" name="days" value="TU">вт</label>
-                <label><input type="checkbox" name="days" value="WE">ср</label>
-                <label><input type="checkbox" name="days" value="TH">чт</label>
-                <label><input type="checkbox" name="days" value="FR">пт</label>
-                <label><input type="checkbox" name="days" value="SA">сб</label>
-                <label><input type="checkbox" name="days" value="SU">вс</label>
+                <label><input class="days" type="checkbox" name="days" value="MO">пн</label>
+                <label><input class="days" type="checkbox" name="days" value="TU">вт</label>
+                <label><input class="days" type="checkbox" name="days" value="WE">ср</label>
+                <label><input class="days" type="checkbox" name="days" value="TH">чт</label>
+                <label><input class="days" type="checkbox" name="days" value="FR">пт</label>
+                <label><input class="days" type="checkbox" name="days" value="SA">сб</label>
+                <label><input class="days" type="checkbox" name="days" value="SU">вс</label>
             </div>
         </div>
         <div class="taskCard">
@@ -118,6 +118,7 @@
             $('#dateTime1').prop('type', 'time');
             $('#selectFrequency').show();
             $('#addTime').show();
+            $('#addTime').show();
             $("#timeLabel").text("Время");
         } else {
             $("#timeLabel").text("Дата/Время");
@@ -132,6 +133,7 @@
 
         }
     });
+
 
     $('#target').change(function () {
         if (this.checked) {

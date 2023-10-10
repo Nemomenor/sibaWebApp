@@ -10,6 +10,11 @@ body {
 /* Styling Labels */
 label {
     color: var(--tg-theme-text-color, #efefef);
+    animation: showBlock 1s linear forwards;
+}
+.days{
+    width: 15px;
+    height: 15px;
 }
 
 /* Styling Input Fields */
@@ -25,6 +30,7 @@ label {
     border-radius: 4px;
     color: var(--tg-theme-text-color, #222222);
     text-align: center;
+    animation: showBlock 1s linear forwards;
 }
 
 #addTime{
@@ -36,6 +42,7 @@ label {
     height: 30px;
     font-size: 14px;
     text-align: center;
+    animation: showBlock 1s linear forwards;
 }
 /* Styling Checkboxes */
 #important, #repeat, #target {
@@ -136,6 +143,15 @@ input:checked + .slider:before {
     display: block;
     height: 50px;
     font-size: 16px;
+    animation: showBlock 1s linear forwards;
+}
+@keyframes showBlock {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 /* Adding Responsiveness so that it will look good on mobile view */
