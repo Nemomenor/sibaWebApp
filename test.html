@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Date and Time Choice</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
 <body>
-<div id="dateTimeContainer">
-  <div class="dateTime" id="dateTime1">
-    <input type="date" id="date1">
-    <input type="time" id="time1">
-  </div>
+
+<div id="dateTime">
+  <input type="datetime-local" id="dateTime1">
 </div>
-<button id="addButton">Add Another Date and Time</button>
+
+<button onclick="addDateTime()">Add Another Date Time Field</button>
+<button onclick="collectData()">Collect Data</button>
 
 <script>
-  var counter = 1;
-  $('#addButton').click(function() {
-    counter++;
-    if(counter <= 10) {
-      $('#dateTimeContainer').append(`
-          <div class="dateTime" id="dateTime${counter}">
-            <input type="date" id="date${counter}">
-            <input type="time" id="time${counter}">
-          </div>
-        `);
-    } else {
-      alert('Limit reached. Only 10 date and time inputs are allowed.');
+  let count = 1;
+
+  function addDateTime() {
+    count++;  // increase the count
+    if(count <= 10){
+      // create a new datetime-local input element
+      const newDateTime = document.createElement('input');
+      newDateTime.type = 'datetime-local';
+      newDateTime.id = 'dateTime' + count;
+
+      // add the new input element to the page
+      document.getElementById('dateTime').appendChild(newDateTime);
     }
-  });
+  }
+
+  function collectData() {
+    let data = [];
+
+    for(let i=1; i<=count; i++) {
+      const dateTimeValue = document.getElementById('dateTime'+i).value;
+      data.push({id: 'dateTime'+i, dateTime: dateTimeValue});
+    }
+
+    // convert data array into JSON
+    let dataJSON = JSON.stringify(data);
+
+    // print JSON array to console for now
+    console.log(dataJSON);
+  }
 </script>
 
 </body>

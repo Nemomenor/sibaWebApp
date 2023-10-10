@@ -44,9 +44,9 @@
         <div class="taskCard">
             <label id="timeLabel" for="dateTime">Дата/Время</label>
             <div id="dateTimeContainer">
-                <input class="dateTime" type="datetime-local" id="dateTime">
+                <input class="dateTime" type="datetime-local" id="dateTime1">
             </div>
-            <button id="addTime" style="display:none;">Добавить время</button>
+            <button type="button" id="addTime" style="display:none;">Добавить время</button>
             <div class="form-group" style="display:none;" id="selectFrequency">
                 <label for="frequency">Периодичность</label>
                 <select id="frequency">
@@ -92,7 +92,7 @@
         counter++;
         if (counter <= 10) {
             $('#dateTimeContainer').append(`
-            <input class="dateTime" type="datetime-local" id="dateTime${counter}">
+            <input class="dateTime" type="time" id="dateTime${counter}">
         `);
         } else {
             alert('Limit reached. Only 10 date and time inputs are allowed.');
@@ -145,10 +145,15 @@
     });
 
     Telegram.WebApp.onEvent('mainButtonClicked', function () {
+        let data = [];
+        for(let i=1; i<=count; i++) {
+            const dateTimeValue = document.getElementById('dateTime'+i).value;
+            data.push({id: 'dateTime'+i, dateTime: dateTimeValue});
+        }
         const taskData = {
             taskName: $('#taskName').val(),
             important: $('#important').is(':checked'),
-            dateTime: $('#dateTime').val(),
+            dateTime: data,
             repeat: $('#repeat').is(':checked'),
             frequency: $('#frequency').val(),
             target: $('#target').is(':checked'),
