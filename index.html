@@ -108,16 +108,16 @@
     });
     $("#frequency").change(function () {
         if ($(this).val() == "Ежемесячно") {
-            $('#dateTime').prop('type', 'datetime-local');
+            $('#dateTime1').prop('type', 'datetime-local');
+            $('#addTime').hide();
         } else {
-            $('#dateTime').prop('type', 'time');
+            $('#dateTime1').prop('type', 'time');
         }
     });
     $('#repeat').change(function () {
         if (this.checked) {
             $('#dateTime1').prop('type', 'time');
             $('#selectFrequency').show();
-            $('#addTime').show();
             $('#addTime').show();
             $("#timeLabel").text("Время");
         } else {
